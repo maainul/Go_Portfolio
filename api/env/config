@@ -7,7 +7,7 @@ mfatimeout="30m"
 
 [server]
 host=""
-port=":8082"
+port="8082"
 certs="./env/certs"
 certProvider="none"
 adminPort="3030"
