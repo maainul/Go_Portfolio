@@ -64,7 +64,7 @@ func NewServer(
 	}
 	r := mux.NewRouter()
 	mw.ChainHTTPMiddleware(r, logger, mw.CSRF([]byte(csrfSecret), csrf.Secure(csrfSecure), csrf.Path("/")))
-	r.PathPrefix("/assets").Handler(http.StripPrefix("/assets/", cacheStaticFiles(http.FileServer(http.FS(s.assetFS)))))
+	r.PathPrefix("/assets/").Handler(http.StripPrefix("/assets/", http.FileServer(http.Dir("./assets"))))
 	handlers(r, s)
 	return r, nil
 }
