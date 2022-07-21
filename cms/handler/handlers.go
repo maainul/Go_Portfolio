@@ -15,4 +15,5 @@ func handlers(r *mux.Router, s Server) {
 	r.HandleFunc(index, s.indexHander).Methods("GET")
 	r.HandleFunc(blogCreate, s.blogFormHandler).Methods("GET")
 	r.HandleFunc(blogCreate, s.blogCreateHandler).Methods("Post")
+	r.HandleFunc(index, s.getInTouchCreateHandler).Methods("Post")
 }

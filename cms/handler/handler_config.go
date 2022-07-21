@@ -9,6 +9,7 @@ import (
 	"strings"
 
 	blgk "portfolio/api/gunk/v1/admin/blog"
+	gitgk "portfolio/api/gunk/v1/admin/getInTouch"
 	"portfolio/svcUtils/logging"
 	"portfolio/svcUtils/mw"
 
@@ -24,15 +25,16 @@ import (
 )
 
 type Server struct {
-	templates *template.Template
-	env       string
-	config    *viper.Viper
-	logger    *logrus.Entry
-	cookies   *sessions.CookieStore
-	decoder   *schema.Decoder
-	assetFS   *hashfs.FS
-	assets    fs.FS
-	blog      blgk.BlogServiceClient
+	templates  *template.Template
+	env        string
+	config     *viper.Viper
+	logger     *logrus.Entry
+	cookies    *sessions.CookieStore
+	decoder    *schema.Decoder
+	assetFS    *hashfs.FS
+	assets     fs.FS
+	blog       blgk.BlogServiceClient
+	getInTouch gitgk.GetInTouchServiceClient
 }
 
 func NewServer(
@@ -45,13 +47,14 @@ func NewServer(
 	api *grpc.ClientConn,
 ) (*mux.Router, error) {
 	s := Server{
-		env:     env,
-		config:  config,
-		logger:  logger,
-		cookies: cookies,
-		decoder: decoder,
-		assets:  assets,
-		blog:    struct{ blgk.BlogServiceClient }{BlogServiceClient: blgk.NewBlogServiceClient(api)},
+		env:        env,
+		config:     config,
+		logger:     logger,
+		cookies:    cookies,
+		decoder:    decoder,
+		assets:     assets,
+		blog:       struct{ blgk.BlogServiceClient }{BlogServiceClient: blgk.NewBlogServiceClient(api)},
+		getInTouch: struct{ gitgk.GetInTouchServiceClient }{GetInTouchServiceClient: gitgk.NewGetInTouchServiceClient(api)},
 	}
 	if err := s.parseTemplates(); err != nil {
 		logging.NewLogger().Print("error while parse template")

@@ -1,0 +1,26 @@
+package getInTouch
+
+import (
+	"time"
+)
+
+type GetInTouch struct {
+	ID         string    `pb:"1" json:"id"`
+	Name       string    `pb:"2" json:"name"`
+	Email      string    `pb:"3" json:"email"`
+	Message    string    `pb:"4" json:"message"`
+	CreatedAt  time.Time `pb:"5" json:"created_at"`
+	CreatedBy  string    `pb:"6" json:"created_by"`
+}
+
+type CreateGetInTouchRequest struct {
+	GetInTouch GetInTouch `pb:"1" json:"GetInTouch"`
+}
+
+type CreateGetInTouchResponse struct {
+	ID string `pb:"1" json:"id"`
+}
+
+type GetInTouchService interface {
+	CreateGetInTouch(CreateGetInTouchRequest) CreateGetInTouchResponse
+}

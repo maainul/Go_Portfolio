@@ -14,6 +14,10 @@ import (
 	bcr "portfolio/api/core/blog"
 	bgk "portfolio/api/gunk/v1/admin/blog"
 	bsr "portfolio/api/service/blog"
+
+	gitcr "portfolio/api/core/getInTouch"
+	gitgk "portfolio/api/gunk/v1/admin/getInTouch"
+	gitsr "portfolio/api/service/getInTouch"
 )
 
 func main() {
@@ -88,4 +92,5 @@ func setupGRPCService(store *postgres.Storage, config *viper.Viper) error {
 
 func registerGrpcServices(grpcServer *grpc.Server, store *postgres.Storage) {
 	bgk.RegisterBlogServiceServer(grpcServer, bsr.BlogCoreConn(bcr.ConnWithStorage(store)))
+	gitgk.RegisterGetInTouchServiceServer(grpcServer, gitsr.GetInTouchCoreConn(gitcr.ConnWithStorage(store)))
 }
