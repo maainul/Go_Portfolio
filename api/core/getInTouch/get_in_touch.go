@@ -1,6 +1,5 @@
 package getInTouch
 
-
 import "portfolio/api/storage/postgres"
 
 type GetInTouchStrgFuncs struct {

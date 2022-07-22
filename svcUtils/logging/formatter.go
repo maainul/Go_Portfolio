@@ -38,7 +38,7 @@ func (f *FluentdFormatter) Format(entry *logrus.Entry) ([]byte, error) {
 	if err != nil {
 		return nil, fmt.Errorf("failed to marshal fields to JSON: %v", err)
 	}
-	
+
 	return append(serialized, '\n'), nil
 }
 

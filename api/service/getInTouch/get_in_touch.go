@@ -2,8 +2,8 @@ package getInTouch
 
 import (
 	"context"
-	"portfolio/api/storage"
 	gk "portfolio/api/gunk/v1/admin/getInTouch"
+	"portfolio/api/storage"
 )
 
 type GetInTouchCoreFuncs struct {
