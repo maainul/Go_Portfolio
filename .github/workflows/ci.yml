@@ -43,7 +43,7 @@ jobs:
             exit 1
           fi
     - name: Check Go Vet
-      run : go vet ./... 
+      run : go vet ./...
     # Migrations Steps
     - name: Install goose package
       run: go install github.com/pressly/goose/v3/cmd/goose@latest

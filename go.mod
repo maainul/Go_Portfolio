@@ -29,14 +29,16 @@ require (
 	github.com/rogpeppe/go-internal v1.8.1 // indirect
 	github.com/shurcooL/go v0.0.0-20190704215121-7189cc372560 // indirect
 	github.com/shurcooL/sanitized_anchor_name v1.0.0 // indirect
-	github.com/stretchr/testify v1.7.1
 	github.com/sirupsen/logrus v1.8.1
 	github.com/spf13/afero v1.8.2
 	github.com/spf13/viper v1.12.0
+	github.com/stretchr/testify v1.7.1
 	github.com/urfave/negroni v1.0.0
 	github.com/yookoala/realpath v1.0.0
 	golang.org/x/crypto v0.0.0-20220622213112-05595931fe9d
+	golang.org/x/lint v0.0.0-20210508222113-6edffad5e616 // indirect
 	golang.org/x/sys v0.0.0-20220708085239-5a0f0661e09d // indirect
+	golang.org/x/tools v0.1.11 // indirect
 	google.golang.org/genproto v0.0.0-20220707150051-590a5ac7bee1 // indirect
 	google.golang.org/grpc v1.48.0
 	google.golang.org/protobuf v1.28.0
