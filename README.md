@@ -104,3 +104,8 @@ https://dev.to/techschoolguru/how-to-write-run-database-migration-in-golang-5h6g
 ## UNIT TEST:
 Details in this blog
 https://dev.to/techschoolguru/write-go-unit-tests-for-db-crud-with-random-data-53no
+
+
+## Plese Check :
+
+https://sparkbox.com/foundry/go_vet_gofmt_golint_to_code_check_in_Go 
