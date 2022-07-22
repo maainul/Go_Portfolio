@@ -4,35 +4,19 @@ import (
 	"context"
 	"portfolio/api/storage"
 	"testing"
+
+	"github.com/stretchr/testify/require"
 )
 
-func TestStorage_CreateBlog(t *testing.T) {
+func TestCreateblog(t *testing.T) {
 	ts := NewStorageTest(t)
+	arg := storage.Blog{
+		Name:      "Mainul",
+		CreatedBy: "12345",
+	}
+	blog, err := ts.CreateBlog(context.TODO(), arg)
+	require.NoError(t, err)
+	require.NotEmpty(t, blog)
+	require.NotZero(t, blog)
 
-	type args struct {
-		ctx context.Context
-		blg storage.Blog
-	}
-	tests := []struct {
-		name    string
-		want    string
-		wantErr bool
-	}{
-		// TODO: Add test cases.
-	}
-	for _, tt := range tests {
-		t.Run(tt.name, func(t *testing.T) {
-			got, err := ts.CreateBlog(context.TODO(), storage.Blog{
-				Name:      "Test Blog",
-				CreatedBy: "123",
-			})
-			if (err != nil) != tt.wantErr {
-				t.Errorf("Storage.CreateBlog() error = %v, wantErr %v", err, tt.wantErr)
-				return
-			}
-			if got != tt.want {
-				t.Errorf("Storage.CreateBlog() = %v, want %v", got, tt.want)
-			}
-		})
-	}
 }
