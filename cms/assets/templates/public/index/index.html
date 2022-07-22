@@ -605,7 +605,7 @@
                             <h2 class="mb-3 text-5 text-uppercase">Follow Me</h2>
                             <ul class="social-icons justify-content-center justify-content-md-start">
                                 <li class="social-icons-dribbble"><a data-bs-toggle="tooltip"
-                                        href="http://www.dribbble.com/harnishdesign/" target="_blank" title=""
+                                        href="http://www.linkedin.com/mdmainulhasan/" target="_blank" title=""
                                         data-bs-original-title="Dribbble" aria-label="Dribbble"><i
                                             class="fab fa-dribbble"></i></a></li>
                                 <li class="social-icons-twitter"><a data-bs-toggle="tooltip"
@@ -613,7 +613,7 @@
                                         data-bs-original-title="Twitter" aria-label="Twitter"><i
                                             class="fab fa-twitter"></i></a></li>
                                 <li class="social-icons-facebook"><a data-bs-toggle="tooltip"
-                                        href="http://www.facebook.com/harnishdesign/" target="_blank" title=""
+                                        href="http://www.facebook.com/immainul/" target="_blank" title=""
                                         data-bs-original-title="Facebook" aria-label="Facebook"><i
                                             class="fab fa-facebook-f"></i></a></li>
                                 <li class="social-icons-google"><a data-bs-toggle="tooltip"
@@ -621,31 +621,29 @@
                                         data-bs-original-title="Google" aria-label="Google"><i
                                             class="fab fa-google"></i></a></li>
                                 <li class="social-icons-github"><a data-bs-toggle="tooltip"
-                                        href="http://www.github.com/" target="_blank" title=""
+                                        href="http://www.github.com/maainul" target="_blank" title=""
                                         data-bs-original-title="GitHub" aria-label="GitHub"><i
                                             class="fab fa-github"></i></a></li>
                             </ul>
                         </div>
                         <div class="col-md-8 col-xl-9 order-0 order-md-1">
                             <h2 class="mb-3 text-5 text-uppercase text-center text-md-start">Send us a note</h2>
-                            <form id="contact-form" action="http://demo.harnishdesign.net/html/simone/php/mail.php"
-                                method="post">
-
+                            <form action="/" method="POST">
+                                {{.CSRFField}}
                                 <div class="row g-4">
                                     <div class="col-xl-6">
-                                        <input name="name" type="text" class="form-control" required=""
+                                        <input name="Name" type="text" class="form-control" required=""
                                             placeholder="Name">
                                     </div>
                                     <div class="col-xl-6">
-                                        <input name="email" type="email" class="form-control" required=""
+                                        <input name="Email" type="email" class="form-control" required=""
                                             placeholder="Email">
                                     </div>
                                     <div class="col">
-                                        <textarea name="form-message" class="form-control" rows="5" required=""
+                                        <textarea name="Message" class="form-control" rows="5" required=""
                                             placeholder="Tell us more about your needs........"></textarea>
                                     </div>
                                 </div>
-
                                 <p class="text-center mt-4 mb-0">
                                     <button id="submit-btn" class="btn btn-primary rounded-pill d-inline-flex"
                                         type="submit">Send Message</button>
@@ -810,9 +808,8 @@
         <button class="btn switcher-toggle"><i class="fas fa-cog"></i></button>
     </div>
     <!-- Styles Switcher End -->
-
-    <!-- JavaScript -->
     <script src="/assets/js/jquery.min.js"></script>
+    <!-- JavaScript -->
     <script src="/assets/js/bootstrap.bundle.min.js"></script>
     <!-- Easing -->
     <script src="/assets/js/jquery.easing.min.js"></script>
