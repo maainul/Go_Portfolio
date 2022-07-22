@@ -12,6 +12,12 @@ ds:
 dropdb:
 	docker exec -it postgres12 pfdb
 
+migrateup:
+	go run api/migrations/migrate.go up
+
+migratedown:
+	go run api/migrations/migrate.go down
+
 server:
 	go run main.go
 
