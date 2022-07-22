@@ -7,7 +7,7 @@ on:
     branches: [ "master" ]
 
 jobs:
-  Automated Tests:
+  Automated_Tests:
     name: Test
     runs-on: ubuntu-latest
     # Service containers to run with `container-job`
