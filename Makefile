@@ -16,6 +16,6 @@ server:
 	go run main.go
 
 test:
-	go test ./... -v --cover
+	DATABASE_CONNECTION="user=root password=secret host=localhost port=5434 sslmode=disable" go test ./... -v --cover
 
 .PHONY: postgres createdb dropdb server test ds
