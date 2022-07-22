@@ -16,6 +16,6 @@ server:
 	go run main.go
 
 test:
-	go test -v --cover ./storage/postgres
+	go test ./... -v --cover
 
 .PHONY: postgres createdb dropdb server test ds
