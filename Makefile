@@ -2,7 +2,7 @@ DB_URL=postgresql://root:secret@localhost:5432/pfdb?sslmode=disable
 
 postgres:
 	# docker run --name postgres12 -p 5434:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
-	docker run --name ps12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -d postgres
+	docker run --name ps12 -p 5434:5432 -e POSTGRES_PASSWORD=secret -d postgres
 
 createdb:
 	docker exec -it postgres12 createdb --username=root --owner=root pfdb
