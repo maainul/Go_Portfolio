@@ -21,7 +21,6 @@ jobs:
           POSTGRES_USER: root
           POSTGRES_PASSWORD: secret
           POSTGRES_DB: pfdb
-          PGPORT: 5434
         ports:
           - 5434:5432
         # Set health checks to wait until postgres has started
