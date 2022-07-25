@@ -1,7 +1,8 @@
 DB_URL=postgresql://root:secret@localhost:5432/pfdb?sslmode=disable
 
 postgres:
-	docker run --name postgres12 -p 5432:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+	# docker run --name postgres12 -p 5434:5432 -e POSTGRES_USER=root -e POSTGRES_PASSWORD=secret -d postgres:12-alpine
+	docker run --name ps12 -p 5432:5432 -e POSTGRES_PASSWORD=secret -d postgres
 
 createdb:
 	docker exec -it postgres12 createdb --username=root --owner=root pfdb
@@ -22,6 +23,6 @@ server:
 	go run main.go
 
 test:
-	DATABASE_CONNECTION="user=root password=secret host=localhost port=5432 sslmode=disable" go test ./... -v --cover
+	DATABASE_CONNECTION="user=postgres password=secret host=localhost port=5432 sslmode=disable" go test ./... -v --cover
 
 .PHONY: postgres createdb dropdb server test ds
