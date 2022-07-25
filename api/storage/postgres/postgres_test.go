@@ -1,11 +1,11 @@
 package postgres
 
 import (
+	"fmt"
 	"log"
 	"os"
 	"path/filepath"
 	"testing"
-	"fmt"
 )
 
 func TestMain(m *testing.M) {
